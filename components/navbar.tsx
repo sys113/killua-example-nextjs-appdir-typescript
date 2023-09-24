@@ -11,7 +11,6 @@ import Link from 'next/link';
 import { useState } from 'react';
 import ModalYourCart from './modalYourCart';
 import { useKillua } from 'killua';
-import { TProduct } from '@/types/product';
 import { thunderCart } from '@/thunders/cart';
 
 export default function Navbar() {
@@ -19,7 +18,7 @@ export default function Navbar() {
   const {
     thunder: thunderCartState,
     isReadyInSsr: thunderCartIsReadyInSsr,
-  } = useKillua<TProduct[]>(thunderCart);
+  } = useKillua(thunderCart);
 
   return (
     <>

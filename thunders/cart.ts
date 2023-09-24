@@ -1,11 +1,10 @@
 import { TProduct } from '@/types/product';
 import { thunder } from 'killua';
-import { ThunderType } from 'killua/types/thunder.type';
 
-const thunderCart: ThunderType = thunder({
+const thunderCart = thunder({
   key: 'cart',
   encrypt: true,
-  default: [],
+  default: [] as TProduct[],
   expire: null,
   selectors: {
     cartIsEmpty: (thunder: TProduct[]) => Boolean(!thunder.length),

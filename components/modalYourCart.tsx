@@ -3,7 +3,6 @@
 import cartIsEmpty from '@/assets/img/cart-is-empty.png';
 import trashIcon from '@/assets/img/trash.svg';
 import { thunderCart } from '@/thunders/cart';
-import { TProduct } from '@/types/product';
 import { Button } from '@nextui-org/react';
 import { useKillua } from 'killua';
 import Image from 'next/image';
@@ -17,7 +16,7 @@ export default function ModalYourCart(props: {
     selectors: thunderCartSelectors,
     reducers: thunderCartReducers,
     isReadyInSsr: thunderCartIsReadyInSsr,
-  } = useKillua<TProduct[]>(thunderCart);
+  } = useKillua(thunderCart);
 
   return (
     <>

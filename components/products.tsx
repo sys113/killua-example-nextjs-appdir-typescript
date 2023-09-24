@@ -2,7 +2,6 @@
 
 import productsData from '@/resources/productsData';
 import { thunderCart } from '@/thunders/cart';
-import { TProduct } from '@/types/product';
 import { Card, CardBody, CardFooter, Image } from '@nextui-org/react';
 import { useKillua } from 'killua';
 import dynamic from 'next/dynamic';
@@ -16,7 +15,7 @@ export default function Products() {
     reducers: thunderCartReducers,
     selectors: thunderCartSelectors,
     isReadyInSsr: thunderCartIsReadyInSsr,
-  } = useKillua<TProduct[]>(thunderCart);
+  } = useKillua(thunderCart);
 
   return (
     <section>
